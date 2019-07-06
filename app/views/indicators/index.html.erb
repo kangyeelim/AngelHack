@@ -1,11 +1,2 @@
 <% content_for :page_title, "Indicators" %>
 <% content_for :page_subtitle, "How companies are ranked" %>
-<ul style="list-style-type:circle;">
-	
-	<% @indicators.each do |indicator| %>
-	
-	<li><%= link_to indicator.name, indicator_path(indicator)%></li>
-	
-	<br>
-	<% end %>
-</ul>
