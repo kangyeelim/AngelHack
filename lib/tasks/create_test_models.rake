@@ -7,7 +7,7 @@ namespace :db do
         Indicator.all.each do |indicator| indicator.destroy end
         puts "Creating Companies & Indicators"
         company_details = [
-                        ["DBS", "D05"],
+                        ["DBS", "D05.SI"],
                         ["Singtel", "Z74"],
                         ["Capitaland Mall Trust", "C38U"],
                         ["Capitaland Mall", "C38"],
