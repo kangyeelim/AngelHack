@@ -9,19 +9,10 @@ class ScreenerController < ApplicationController
     strategy = params[:commit]
     #strategy_type
     @strategy_info = ["Dividend", "Value"] #temporary fix, to be uncommented when strategy models created
-    # Assign strategy type below
-    if strategy == "Dividend"
-      # Do dividend strategy
-    elsif strategy == "Value"
-      # Do value strategy
-    end
-=begin
-    #To be uncommented when bug fixed
     @company_pass_fail = []
-    Company.all.each do |@company|
-      @company_pass_fail << {company: @company, pass: screen_company(strategy_type)}
+    Company.all.each do |company|
+      @company_pass_fail << {company: company, pass: screen_company(strategy, company)}
     end
-=end
   end
 
   def indicators
@@ -30,19 +21,19 @@ class ScreenerController < ApplicationController
   end
 
   # Will perform each test differently / diff combination of test depending on strategy type
-  def screen_company(strategy_type)
-    price_to_earnings_test && current_ratio_test && debt_to_equity_test
+  def screen_company(strategy, company)
+    price_to_earnings_test(company) && current_ratio_test(company) && debt_to_equity_test(company)
   end
 
-  def price_to_earnings_test
-    @company.notifications.find_by(name: 'P/E Ratio') < 20
+  def price_to_earnings_test(company)
+    company.indicators.find_by(category: 'P/E Ratio').value < 20
   end
 
-  def current_ratio_test
-    @company.notifications.find_by(name: 'Current Ratio') > 1.5
+  def current_ratio_test(company)
+    company.indicators.find_by(category: 'Current Ratio').value > 1.5
   end
 
-  def debt_to_equity_test
-    @company.notifications.find_by(name: 'D/E Ratio') < 0.35
+  def debt_to_equity_test(company)
+    company.indicators.find_by(category: 'D/E Ratio').value < 0.35
   end
 end
