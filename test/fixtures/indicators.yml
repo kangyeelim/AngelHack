@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  indicator_type: MyString
+  value: 1.5
+  last_updated: 2019-07-06 18:43:45
+
+two:
+  indicator_type: MyString
+  value: 1.5
+  last_updated: 2019-07-06 18:43:45
