@@ -1,0 +1,15 @@
+current directory: /home/therealravager/Desktop/AngelHack/AngelHack/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+/usr/bin/ruby2.5 -r ./siteconf20190706-22037-1jgaqyd.rb extconf.rb
+creating Makefile
+
+current directory: /home/therealravager/Desktop/AngelHack/AngelHack/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/therealravager/Desktop/AngelHack/AngelHack/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/therealravager/Desktop/AngelHack/AngelHack/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20190706-22037-2ibed9
