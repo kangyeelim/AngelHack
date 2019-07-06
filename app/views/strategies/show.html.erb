@@ -1,1 +1,8 @@
 <b><%= "Results for #{params['strategy_type']}"%></b>
+
+
+<% for i in 0...@companies.length %>
+    <div class="box">
+        <h2 class="companies"><%= @companies[i], class: "companies"%></h2>
+    </div>
+<% end %>
