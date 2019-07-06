@@ -1,8 +1,9 @@
 <b><%= "Results for #{params['strategy_type']}"%></b>
 
 
-<% for i in 0...@companies.length %>
+<% @companies.each do |company| %>
     <div class="box">
-        <h2 class="companies"><%= @companies[i]%></h2>
+        <h2 class="companies"><%= company[:company]%></h2>
+        <h3><%= company[:result]%></h3>
     </div>
 <% end %>

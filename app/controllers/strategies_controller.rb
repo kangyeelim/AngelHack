@@ -4,6 +4,7 @@ class StrategiesController < ApplicationController
 	end
 
 	def show
-		@companies = ["Company 1", "Company 2"]
+		@companies = [{:company => "Company 1", :result => "PASS"}, 
+					{:company => "Company 2", :result => "FAIL"}]
 	end
 end
