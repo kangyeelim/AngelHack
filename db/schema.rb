@@ -22,19 +22,12 @@ ActiveRecord::Schema.define(version: 20190706104345) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "indicator_types", force: :cascade do |t|
-    t.string "type"
-    t.float "pass_value"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "indicators", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.float "value"
     t.datetime "last_updated"
     t.integer "company_id"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
