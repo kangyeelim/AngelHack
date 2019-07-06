@@ -4,5 +4,6 @@ class StrategiesController < ApplicationController
 	end
 
 	def show
+		@companies = ["Company 1", "Company 2"]
 	end
 end
