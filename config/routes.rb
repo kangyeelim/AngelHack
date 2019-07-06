@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :strategies
   resources :indicators
   resources :companies
+  resources :screeners
   
 end

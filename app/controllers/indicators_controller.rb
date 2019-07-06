@@ -4,5 +4,6 @@ class IndicatorsController < ApplicationController
 	 end
 
 	 def show 
+	 	@indicator = Indicator.params([:id])
 	 end
 end

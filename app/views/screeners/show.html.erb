@@ -1,0 +1,12 @@
+@strategy = Strategy.find(params[:id])
+		@rankings = @strategy.rankings
+
+
+<ul style="list-style-type:circle;">
+	
+	<% @rankings.each do |ranking| %>
+	<li><%= link_to ranking.company, company_path(ranking.company)%></li>
+	
+	<br>
+	<% end %>
+</ul>

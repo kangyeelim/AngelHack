@@ -1,1 +1,11 @@
-index for strategies
+<% content_for :page_title, "Investment Strategies" %>
+<% content_for :page_subtitle, "How you can invest" %>
+<ul style="list-style-type:circle;">
+	
+	<% @strategies.each do |strategy| %>
+	
+	<li><%= link_to strategy.name, strategy_path(indicator)%></li>
+	
+	<br>
+	<% end %>
+</ul>

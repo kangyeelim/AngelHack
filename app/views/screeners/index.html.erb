@@ -1,0 +1,15 @@
+<% content_for :page_title, "Choose your strategy" %>
+<% content_for :page_subtitle, "" %>
+
+<ul><li><a class="button is-primary is-outlined is-medium">Value Investing</a></li>
+	<br>
+<li><a class="button is-primary is-outlined is-medium">Dividend Investing</a></li></ul>
+<ul style="list-style-type:circle;">
+	
+	<% @strategies.each do |strategy| %>
+	
+	<li><%= button_to strategy.name, strategy.companies%></li>
+	
+	<br>
+	<% end %>
+</ul>
