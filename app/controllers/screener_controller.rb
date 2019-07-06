@@ -7,17 +7,21 @@ class ScreenerController < ApplicationController
 
   def companies
     strategy = params[:commit]
-    strategy_type
+    #strategy_type
+    @strategy_info = ["Dividend", "Value"] #temporary fix, to be uncommented when strategy models created
     # Assign strategy type below
     if strategy == "Dividend"
       # Do dividend strategy
     elsif strategy == "Value"
       # Do value strategy
     end
+=begin
+    #To be uncommented when bug fixed
     @company_pass_fail = []
     Company.all.each do |@company|
       @company_pass_fail << {company: @company, pass: screen_company(strategy_type)}
     end
+=end
   end
 
   def indicators
