@@ -1,11 +1,10 @@
 <% content_for :page_title, "Strategies" %>
 <% content_for :page_subtitle, "Different types of strategies" %>
-
-<% for i in 0...@strategies.length %>
+<h1>Types of Investing Strategies</h1>
+<% @strategies.each do |strategy| %>
+	<div class="box">
+		<h2><%= strategy[:name]%></h2>
+		<h3><%= strategy[:explanation]%></h3>
 	<br>
-	<%= link_to(@strategies[i], {:controller => 'strategies', 
-								 :action => 'show', 
-								 :id => i, 
-								 :strategy_type => @strategies[i]}, class:'button') %>
-	<br>
+	</div>
 <% end %>
