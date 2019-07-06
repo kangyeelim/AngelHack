@@ -1,2 +1,11 @@
-<h1>Screener#strategies</h1>
-<p>Find me in app/views/screener/strategies.html.erb</p>
+<% content_for :page_title, "Strategies" %>
+<% content_for :page_subtitle, "Different types of strategies" %>
+
+<% for i in 0...@strategies.length %>
+	<br>
+	<%= link_to(@strategies[i], {:controller => 'screener',
+                                 :strategy_id => i, 
+								 :action => 'companies'
+								 }, class:'button') %>
+	<br>
+<% end %>

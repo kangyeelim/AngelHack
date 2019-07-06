@@ -1,5 +1,6 @@
 class ScreenerController < ApplicationController
   def strategies
+    @strategies=["Dividend", "Value"]
   end
 
   def companies
