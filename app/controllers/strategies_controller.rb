@@ -4,6 +4,5 @@ class StrategiesController < ApplicationController
 	end
 
 	def show
-		@result = @strategies[index]
 	end
 end
