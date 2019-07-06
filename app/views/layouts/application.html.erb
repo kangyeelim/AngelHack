@@ -43,9 +43,9 @@
       <div class="container has-text-centred">
         <ul>
           <li><%= link_to 'Overview', root_path, class: "navbar-item" %></li>
-          <li>Investment strategies</li>
-          <li>Indicators</li>
-          <li>Companies</li>
+          <li><%= link_to 'Investment strategies', strategies_path, class: "navbar-item"%></li>
+          <li><%= link_to 'Indicators', indicators_path, class: "navbar-item"%></li>
+          <li><%= link_to 'Companies', strategies_path, class: "navbar-item"%></li>
         </ul>
       </div>
     </nav>
