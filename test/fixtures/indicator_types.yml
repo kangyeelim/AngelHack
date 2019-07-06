@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  pass_value: 1.5
+  description: MyText
+
+two:
+  type: 
+  pass_value: 1.5
+  description: MyText

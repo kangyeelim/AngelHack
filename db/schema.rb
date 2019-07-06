@@ -15,8 +15,23 @@ ActiveRecord::Schema.define(version: 20190706104345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "ticker"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "indicator_types", force: :cascade do |t|
+    t.string "type"
+    t.float "pass_value"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "indicators", force: :cascade do |t|
-    t.string "indicator_type"
+    t.string "type"
     t.float "value"
     t.datetime "last_updated"
     t.integer "company_id"
