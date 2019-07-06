@@ -1,1 +1,9 @@
+<% content_for :page_title, "Strategies" %>
+<% content_for :page_subtitle, "Differen types of strategies" %>
+
 index for strategies
+<% for i in 0...@strategies.length %>
+	<br>
+	<%= link_to @strategies[i], strategies_path(@strategies[i]), class:'button' %>
+	<br>
+<% end %>
