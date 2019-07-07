@@ -1,11 +1,12 @@
 <% content_for :page_title, "Strategies" %>
 <% content_for :page_subtitle, "Different types of strategies" %>
-<h1><b>Types of Investing Strategies</b></h1>
+<h1 class="title is -2">Types of Investing Strategies</h1>
 <br>
 <% @strategies.each do |strategy| %>
-	<div class="box">
-		<h2><b><%= strategy[:name]%></b></h2><br>
-		<h3><b><%= strategy[:explanation]%></b></h3>
+	<div class="box is-primary">
+		<h2><b><%= strategy[:name]%></b></h2>
+		<br>
+		<h3><%= strategy[:explanation]%></h3>
 	<br>
 	</div>
 <% end %>
