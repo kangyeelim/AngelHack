@@ -4,9 +4,20 @@
 <br>
 <% @strategies.each do |strategy| %>
 	<div class="box is-primary">
-		<h2><b><%= strategy[:name]%></b></h2>
+		<h1><b><%= strategy[:name]%></b></h1>
 		<br>
+		
 		<h3><%= strategy[:explanation]%></h3>
+		<br>
+		<div class="content">
+		<h6><b><%= "Indicators for #{strategy[:name]}"%></b></h6>
+		<ul style ="list-style-type:circle">
+		<% for i in 0...strategy[:indicators].length %>
+			<% @indicators = strategy[:indicators] %>
+			<li><%= @indicators[i] %></li>
+		<% end %>
+		</ul>
+	</div>
 	<br>
 	</div>
 <% end %>

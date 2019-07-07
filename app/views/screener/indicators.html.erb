@@ -6,6 +6,7 @@
   <div class="box">
     <h2><%= details[:name] %></h2>
     <h2><%= details[:pass] ? "Pass" : "Fail" %></h2>
+    <h2><%= Indicator.find_by(category:details[:name], company_id:@company.id).value %></h2>
   </div>
 <% end %>
 
