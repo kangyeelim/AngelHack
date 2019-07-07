@@ -1,7 +1,7 @@
 <% content_for :page_title, "Screening Results" %>
 <% content_for :page_subtitle, "Recommended stocks based on your investing strategy" %>
 
-<h1 class='title'><%= "Screening results for: #{@strategy_info} Investing"%></h1>
+<h1 class='title'><%= "Screening results for: #{@strategy_info}"%></h1>
 <% @company_pass_fail.each do |details|%>
   <div class="box">
     <h2><b><%= details[:company].name %></h2></b>

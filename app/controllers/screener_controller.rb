@@ -1,6 +1,9 @@
 class ScreenerController < ApplicationController
   def strategies
-    @strategies=["Dividend Investing", "Value Investing"]
+    @count = 0
+	  @strategies = [
+	    {:name => "Dividend Investing", :explanation => "Dividend investing is where investors buy stocks and collect dividends, which are a portion of a company’s earnings distributed to the shareholders."}, 
+	    {:name => "Value Investing", :explanation => "Value investing is an investing strategy that involves picking stocks that appear to be trading for less than their intrinsic or book value then selling them for a price that is higher than their original cost."}]
     # To be uncommented when strategy models created
     # @Strategies = Strategy.all
   end
@@ -33,7 +36,11 @@ class ScreenerController < ApplicationController
 
   # Will perform each test differently / diff combination of test depending on strategy type
   def screen_company(strategy, company)
-    price_to_earnings_company_test(company) && current_ratio_company_test(company) && debt_to_equity_company_test(company)
+    if strategy == "Dividend Investing"
+      price_to_earnings_company_test(company) 
+    else 
+      price_to_earnings_company_test(company) && current_ratio_company_test(company) && debt_to_equity_company_test(company)
+    end
   end
 
   def price_to_earnings_company_test(company)
