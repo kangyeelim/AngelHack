@@ -1,1 +1,10 @@
-index for companies
+<% content_for :page_title, "Singapore Companies" %>
+<% content_for :page_subtitle, "Who you can invest" %>
+<% @companies.each do |company| %>
+<div class="box">
+	<h2><b><%= company.name %></b></h2>
+	<h2>Ticker: <%= company.ticker %></h2>
+</div>
+<% end %>
+
+
