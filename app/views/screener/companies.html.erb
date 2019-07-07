@@ -1,8 +1,13 @@
-<h1>Screener#companies</h1>
-<p>Find me in app/views/screener/companies.html.erb</p>
-<h1><%= "Screening results: #{@strategy_shown_on_screen}"%></h1>
-<% Company.all.each do |company|%>
-    <div class="box">
-        <h2><%= company.name%></h2>
-    </div>
+<% content_for :page_title, "Screening Results" %>
+<% content_for :page_subtitle, "Recommended stocks based on your investing strategy" %>
+
+<h1><%= "Screening results: #{@strategy_info}"%></h1>
+<% @company_pass_fail.each do |details|%>
+  <div class="box">
+    <h2>
+      <%= link_to(details[:company].name,
+        {:controller => 'screener', :company_id => details[:company].id, :action => 'indicators'}) %>
+    </h2>
+    <h2><%= details[:pass] ? "Pass" : "Fail" %></h2>
+  </div>
 <% end %>
