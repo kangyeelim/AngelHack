@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Testing</title>
+    <title>Singapore Stocks Screener</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <section class="hero is-primary is-medium">
-  <!-- Hero head: will stick at the top -->
-  <div class="hero-head">
-    <nav class="navbar">
-      <div class="container">
-        <div class="navbar-brand">
-            Stock Screener Project
-         <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-            <span></span>
-            
-             
-          </span>
-        </div>
-     </div>
-    </nav>
-  </div>
-
+  <section class="hero is-primary is-small">
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="container has-text-centered">
@@ -43,7 +26,7 @@
       <div class="container has-text-centred">
         <ul>
           <li><%= link_to 'Overview', root_path, class: "navbar-item" %></li>
-          <li><%= link_to 'Investment strategies', strategies_path, class: "navbar-item"%></li>
+          <li><%= link_to 'Investment Strategies', strategies_path, class: "navbar-item"%></li>
           <li><%= link_to 'Indicators', indicators_path, class: "navbar-item"%></li>
           <li><%= link_to 'Companies', companies_path, class: "navbar-item"%></li>
           <li><%= link_to 'Stock Screener', screener_strategies_path, class:"navbar-item"%></li>
@@ -61,7 +44,6 @@
 
 <footer class="footer">
   <div class="container">
-    Copyright © 2019 testing. All rights reserved.
   </div>
 </footer>
 </body>

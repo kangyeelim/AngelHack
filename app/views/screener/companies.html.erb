@@ -1,13 +1,14 @@
 <% content_for :page_title, "Screening Results" %>
 <% content_for :page_subtitle, "Recommended stocks based on your investing strategy" %>
 
-<h1><%= "Screening results: #{@strategy_info}"%></h1>
+<h1 class='title'><%= "Screening results for: #{@strategy_info} Investing"%></h1>
 <% @company_pass_fail.each do |details|%>
   <div class="box">
-    <h2>
-      <%= link_to(details[:company].name,
-        {:controller => 'screener', :company_id => details[:company].id, :action => 'indicators'}) %>
-    </h2>
-    <h2><%= details[:pass] ? "Pass" : "Fail" %></h2>
+    <h2><b><%= details[:company].name %></h2></b>
+    
+    <h2><%= details[:pass] ? "Recommended For Investment" : "Not Recommended For Investment" %></h2>
+    <br/>
+    <%= link_to("View Report",
+      {:controller => 'screener', :company_id => details[:company].id, :action => 'indicators'}, class: 'button float-left') %>
   </div>
 <% end %>

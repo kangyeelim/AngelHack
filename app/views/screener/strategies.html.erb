@@ -1,11 +1,16 @@
-<% content_for :page_title, "Strategies" %>
-<% content_for :page_subtitle, "Different types of strategies" %>
+<% content_for :page_title, "Stock Screener" %>
+<% content_for :page_subtitle, "Select your investment strategy" %>
 
-<% for i in 0...@strategies.length %>
-  <br>
-	<%= link_to(@strategies[i], {:controller => 'screener',
-                                 :strategy_id => i, 
+<h1 class="title">Select your investment strategy</h1>
+<% @strategies.each do |strategy| %>
+  <div class="box">
+    <h5><b><%= strategy[:name] %></b></h5><br>
+	<h5><%= strategy[:explanation] %></h5>
+    <br/>
+	<%= link_to("Select", {:controller => 'screener',
+                                 :strategy_id => @count, 
 								 :action => 'companies'
 								 }, class:'button') %>
-  <br>
+  </div>
+<% @count += 1 %>
 <% end %>
