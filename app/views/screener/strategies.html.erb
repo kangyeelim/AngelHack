@@ -2,10 +2,10 @@
 <% content_for :page_subtitle, "Different types of strategies" %>
 
 <% for i in 0...@strategies.length %>
-	<br>
+  <br>
 	<%= link_to(@strategies[i], {:controller => 'screener',
                                  :strategy_id => i, 
 								 :action => 'companies'
 								 }, class:'button') %>
-	<br>
+  <br>
 <% end %>
