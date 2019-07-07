@@ -19,11 +19,13 @@ namespace :db do
             company.save!
             for x in 0..2
                 indicator_categories = ["P/E Ratio", "Current Ratio", "D/E Ratio"]
-                indicator_details = [indicator_categories[x], [0.10, 0.50, 1, 1.5, 15, 25].sample, Time.now - [0, 1, 2].sample.day]
+                indicator_details = [20, 1.5, 0.35]
+                time = Time.now
+                #indicator_details = [indicator_categories[x], [20, 1.5, 0.35], Time.now]
                 indicator = Indicator.new
-                indicator.category = indicator_details[0]
-                indicator.value = indicator_details[1]
-                indicator.last_updated = indicator_details[2]
+                indicator.category = indicator_categories[x]
+                indicator.value = indicator_details[x]
+                indicator.last_updated = time
                 indicator.company_id = company.id
                 indicator.save!
             end
