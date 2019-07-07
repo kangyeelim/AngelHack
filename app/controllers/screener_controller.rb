@@ -7,6 +7,8 @@ class ScreenerController < ApplicationController
 
   def companies
     strategy = params[:commit]
+    byebug
+    @strategy_shown_on_screen = params[:commit]
     #strategy_type
     @strategy_info = ["Dividend", "Value"] #temporary fix, to be uncommented when strategy models created
     @company_pass_fail = []
