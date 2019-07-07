@@ -1,12 +1,13 @@
 <% content_for :page_title, "Indicator Results" %>
 <% content_for :page_subtitle, "Indicator test results for #{@company.name}" %>
 
-<h1><%= "Indicator Results For: #{@company.name}" %></h1>
+<h1 class='title'><%= "Indicator Results For: #{@company.name}" %></h1>
 <% @indicators_pass_fail.each do |details|%>
   <div class="box">
-    <h2><%= details[:name] %></h2>
-    <h2><%= details[:pass] ? "Pass" : "Fail" %></h2>
-    <h2><%= Indicator.find_by(category:details[:name], company_id:@company.id).value %></h2>
+    <h2><b><%= "Indicator: #{details[:name]}" %></b></h2>
+    <h2><%= details[:pass] ? "Passed evaluation" : "Failed Evaluation" %></h2>
+    <h2><%= "#{details[:name]}: #{Indicator.find_by(category:details[:name], company_id:@company.id).value}" %></h2>
+    <h2><%= "Healthy Range: #{@thresholds["#{details[:name]}"]}" %></h2>
   </div>
 <% end %>
 

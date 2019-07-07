@@ -9,6 +9,6 @@
     <h2><%= details[:pass] ? "Recommended For Investment" : "Not Recommended For Investment" %></h2>
     <br/>
     <%= link_to("View Report",
-      {:controller => 'screener', :company_id => details[:company].id, :action => 'indicators'}, class: 'button float-left') %>
+      {:controller => 'screener',:strategy_id => params[:strategy_id].to_i, :company_id => details[:company].id, :action => 'indicators'}, class: 'button float-left') %>
   </div>
 <% end %>
