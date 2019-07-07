@@ -1,7 +1,7 @@
 <h1>Screener#companies</h1>
 <p>Find me in app/views/screener/companies.html.erb</p>
-<h1><%= "Screening results: #{@strategy_info[params[:strategy_id].to_i]}"%></h1>
-<%= Company.all.each do |company|%>
+<h1><%= "Screening results: #{@strategy_shown_on_screen}"%></h1>
+<% Company.all.each do |company|%>
     <div class="box">
         <h2><%= company.name%></h2>
     </div>
