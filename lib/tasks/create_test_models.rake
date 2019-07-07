@@ -24,7 +24,7 @@ namespace :db do
                 #indicator_details = [indicator_categories[x], [20, 1.5, 0.35], Time.now]
                 indicator = Indicator.new
                 indicator.category = indicator_categories[x]
-                indicator.value = indicator_details[x]
+                indicator.value = rand(0.0..50.0)
                 indicator.last_updated = time
                 indicator.company_id = company.id
                 indicator.save!
