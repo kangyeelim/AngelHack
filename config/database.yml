@@ -1,6 +1,10 @@
 default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # if you are on Windows, uncomment this block. 
+  # username: #insert username here
+  # password: #insert password here
+  # If you are on Mac, no changes are needed
   timeout: 5000
 
 development:

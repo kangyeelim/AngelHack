@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+About
+This is a Singapore stock screener website, created during Angelhack Singapore 2019. Stocks listed on SGX are screened according to an investing system, instead of specific financial ratios. 
 
-Things you may want to cover:
+Developers: Iskandar, Kang Yee, Jia Ying, Felicia, Evon
 
-* Ruby version
+Instructions to configure database settings:
+1. git clone <our repo>
 
-* System dependencies
+2. git update-index --assume-unchanged config/database.yml 
 
-* Configuration
+3. Install Postgresql and follow the instructions
 
-* Database creation
+4. If you are on Windows, go to config/database.yml and update your username and password. 
 
-* Database initialization
+Database initialisation
+1. rake db:create (to create databases in your Postgresql account)
+2. rake db:migrate
+3. rake db:set_test_environment (to populate data in dev environment)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Status:
+This is an ongoing project. Instructions are subject to change, depending on what workflow we settle down to. 
