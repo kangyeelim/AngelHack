@@ -6,7 +6,7 @@ This is a Singapore stock screener website, created during Angelhack Singapore 2
 Developers: Iskandar, Kang Yee, Jia Ying, Felicia, Evon
 
 Instructions to configure database settings:
-1. git clone <our repo>
+1. git clone https://github.com/kangyeelim/AngelHack.git 
 
 2. git update-index --assume-unchanged config/database.yml 
 
