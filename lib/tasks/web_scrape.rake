@@ -21,9 +21,7 @@ namespace :scraper do
             # Do we need some sort of master url? Maybe trading code?
             # company.name and company.ticker ?
 
-            url = "https://sg.finance.yahoo.com/screener/new"
-            browser = Watir::Browser.new(:chrome)
-            browser
+    
             #by right above we need something to go and filter to sg companies since the below link works only for a few days
             yh_url = "https://sg.finance.yahoo.com/screener/unsaved/e2a085df-9287-42f1-8c81-7f04a6bb3d5f"
         
