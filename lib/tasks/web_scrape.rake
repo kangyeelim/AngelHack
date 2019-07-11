@@ -21,7 +21,22 @@ namespace :scraper do
             # Do we need some sort of master url? Maybe trading code?
             # company.name and company.ticker ?
 
-
+            url = "https://sg.finance.yahoo.com/screener/new"
+            browser = Watir::Browser.new(:chrome)
+            browser
+            #by right above we need something to go and filter to sg companies since the below link works only for a few days
+            yh_url = "https://sg.finance.yahoo.com/screener/unsaved/e2a085df-9287-42f1-8c81-7f04a6bb3d5f"
+        
+            page = Nokogiri::HTML(open(yh_url))
+            #scraping companies in their table but somehow it doesnt just do one page but also doesnt scrape all
+            all_rows = page.css("div table tbody tr")
+            Company.destroy_all
+            all_rows.each do |row|
+                cell = row.css("td")
+                comp = Company.find_or_create_by(name: cell[1].text)
+                comp.update_attribute(:ticker, cell[0].text)
+                #here is supposed to update their indicators to link i guess
+            end
             # Below are the things that need to be scraped
             # 1) Price to Earnings (P/E) Ratio => SGX
             #    - P/E Ratio = Market Value Per Share / Earnings Per Share
@@ -63,6 +78,8 @@ namespace :scraper do
         def data_scraper(url)
             Nokogiri::HTML(open(url))
         end
+
+        
     end
 end
 
