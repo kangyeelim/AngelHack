@@ -1,11 +1,11 @@
 # README
 
-About
+# About
 This is a Singapore stock screener website, created during Angelhack Singapore 2019. Stocks listed on SGX are screened according to an investing system, instead of specific financial ratios. 
 
 Developers: Iskandar, Kang Yee, Jia Ying, Felicia, Evon
 
-Instructions to configure database settings:
+# Getting started:
 1. git clone https://github.com/kangyeelim/AngelHack.git 
 
 2. git update-index --assume-unchanged config/database.yml 
@@ -14,10 +14,10 @@ Instructions to configure database settings:
 
 4. If you are on Windows, go to config/database.yml and update your username and password. 
 
-Database initialisation
+# Database initialisation
 1. rake db:create (to create databases in your Postgresql account)
 2. rake db:migrate
 3. rake db:set_test_environment (to populate data in dev environment)
 
-Status:
+# Status:
 This is an ongoing project. Instructions are subject to change, depending on what workflow we settle down to. 
