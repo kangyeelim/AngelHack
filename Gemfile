@@ -5,9 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.7'
+gem 'rails', '~> 6.0.0'
 
 # To remove this once pg set up properly
 # Use sqlite3 as the database for Active Record
